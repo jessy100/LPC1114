@@ -21,5 +21,6 @@ HEADERS    := sw-uart.h timer.h pins.h
 # Specify directories, other than the current, that contain sources
 SEARCH     := ../lib
 
+
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

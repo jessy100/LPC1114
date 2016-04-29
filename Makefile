@@ -44,6 +44,8 @@ SUBDIRS += 440hz timer servo sw-uart ds1990
 #    lcd5510   : show random lines on an LCD5510 display
 SUBDIRS += lcd5510
 
+
+
 # The Makefile.subdirs does the work
 include ../../../Makefile.subdirs
 
