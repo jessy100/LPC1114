@@ -15,8 +15,8 @@ TARGET     := lpc1114fn28
 BMPTK      := ../../../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
-SOURCES    := sw-uart.c timer.c
-HEADERS    := sw-uart.h timer.h pins.h sr-04.h
+SOURCES    := sw-uart.c timer.c lcd5510.c
+HEADERS    := sw-uart.h timer.h pins.h sr-04.h lcd5510.h
 
 # Specify directories, other than the current, that contain sources
 SEARCH     := ../lib
