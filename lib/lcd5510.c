@@ -262,3 +262,17 @@ void drawInt(int x, int y, int value){
     }
 
 }
+
+void drawArray(char scan_data[]){
+  // 13 n = 1 graad
+  // 1 pixel = 2 graden
+  //1 index = 2 graden
+  //1 pixel = 1 index?
+  int i = 0;
+  for(i = 0; i < 83;i++){
+    lcd5510_write(i,48 - scan_data[i]/2,1 );
+    delay(1000 * 50);
+  }
+
+
+}

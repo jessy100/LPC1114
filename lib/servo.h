@@ -23,8 +23,16 @@ void servo_high(int port, int pin){
 
 void servo_pulse(int port,int pin, int time){
 	servo_high(port,pin);
-	delay(delay);
+	delay(time);
 	servo_low(port,pin);
+}
+
+void servo_reset(int port, int pin){
+		int i = 0;
+	  for(i = 0; i < 75; i++){
+				servo_pulse(port,pin,2500);
+				delay(1000 * 30);
+		}
 }
 
 #endif
