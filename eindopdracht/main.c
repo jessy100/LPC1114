@@ -1,4 +1,4 @@
-//Main for "Poor mans lidar"
+//Main for "Poor mans polarview"
 //Author: Jessy Visch
 
 #include "bmptk.h"
@@ -9,8 +9,8 @@
 #include "lcd5510.h"
 #include "servo.h"
 
-#define ECHO_PIN 1,8 //Input
-#define TRIG_PIN 1,9 //Ouput
+#define ECHO_PIN 1,8
+#define TRIG_PIN 1,9
 #define SERVO_PIN 0,7
 
 int main( void ){
@@ -25,10 +25,8 @@ int main( void ){
   int n = 2500;
   int scanning = 0;
   int scans = 0;
-  char scan_data[99] = {0};
   int distanceLimit = 96;
-
-
+  char scan_data[99] = {0};
 
   servo_reset(SERVO_PIN);
 
@@ -44,7 +42,7 @@ int main( void ){
 
       //get the duration it takes for the echo to return
 			duration = awaitPulse(ECHO_PIN,TRIG_PIN, 16000);
-      
+
       // if the duration returns -1 or is greater then distance limit, output error
 			if(duration == -1 || (duration/58) > distanceLimit) {
 					uart_put_string("error\n");
@@ -60,9 +58,6 @@ int main( void ){
       scans++;
       if(n <= 25){
         scanning = 0;
-        uart_put_string("scans: ");
-        uart_put_int_decimal(scans);
-        uart_put_string("\n");
         int x = 0;
         drawArray(scan_data);
       }

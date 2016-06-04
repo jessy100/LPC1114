@@ -27,6 +27,7 @@ void servo_pulse(int port,int pin, int time){
 	servo_low(port,pin);
 }
 
+//reset the servo to starting position
 void servo_reset(int port, int pin){
 		int i = 0;
 	  for(i = 0; i < 75; i++){
